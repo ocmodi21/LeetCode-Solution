@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approch-1
+// Approch-1 linear search
 int searchInsert(vector<int> &nums, int target)
 {
     int l = 0;
@@ -22,7 +22,7 @@ int searchInsert(vector<int> &nums, int target)
         return nums.size();
 }
 
-// Approch-2
+// Approch-2 binary search
 int searchInsert(vector<int> &a, int target)
 {
     int l = 0, h = a.size() - 1, mid;
