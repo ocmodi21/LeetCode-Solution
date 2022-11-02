@@ -17,7 +17,7 @@ int singleNumber(vector<int> &nums)
     return -1;
 }
 
-// Approch-1 =>Time Complexity o(nlogn) =>Space Complexity o(1)
+// Approch-2 =>Time Complexity o(nlogn) =>Space Complexity o(1)
 int singleNumber(vector<int> &nums)
 {
     int n = nums.size();
@@ -36,7 +36,7 @@ int singleNumber(vector<int> &nums)
     return -1;
 }
 
-// Approch-1 =>Time Complexity o(n^2) =>Space Complexity o(1)
+// Approch-3 =>Time Complexity o(n^2) =>Space Complexity o(1)
 int singleNumber(vector<int> &nums)
 {
     for (int i = 0; i < nums.size(); i++)
