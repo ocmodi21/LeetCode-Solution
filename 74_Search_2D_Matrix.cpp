@@ -40,7 +40,7 @@ bool searchMatrix(vector<vector<int>> &matrix, int target)
     return false;
 }
 
-// Approch-3 =>Time Complexity o(log(m*n))
+// Approch-3
 bool searchMatrix(vector<vector<int>> &matrix, int target)
 {
     int n = matrix.size();
