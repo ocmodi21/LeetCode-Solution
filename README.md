@@ -10,4 +10,4 @@
 
 # Leetcode Stats 🏆
 
-![LeetCode Stats](https://leetcard.jacoblin.cool/ocmodi21?theme=nord&font=Ubuntu%20Mono&ext=heatmap&&width=1000&&height=400)
+![Leetcode Stats](https://leetcard.jacoblin.cool/ocmodi21?ext=heatmap)
