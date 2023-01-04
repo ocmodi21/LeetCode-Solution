@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Approch-1
 string reverseParentheses(string s)
 {
     stack<char> st;
@@ -36,4 +37,33 @@ string reverseParentheses(string s)
         st.pop();
     }
     return reverse;
+}
+
+// Approch-2
+string reverseParentheses(string s)
+{
+    stack<int> st;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == '(')
+        {
+            st.push(i);
+        }
+        else if (s[i] == ')')
+        {
+            int open = st.top();
+            int close = i;
+            st.pop();
+            reverse(s.begin() + open + 1, s.begin() + close);
+        }
+    }
+    string ans;
+    for (auto it : s)
+    {
+        if (it != '(' && it != ')')
+        {
+            ans.push_back(it);
+        }
+    }
+    return ans;
 }
