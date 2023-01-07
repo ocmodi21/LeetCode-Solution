@@ -8,6 +8,7 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+// Approch-1
 void reorderList(ListNode *head)
 {
     ListNode *temp = head;
@@ -43,5 +44,46 @@ void reorderList(ListNode *head)
     {
         order->val = val;
         order = order->next;
+    }
+}
+
+// Approch-2
+ListNode *middle(ListNode *head)
+{
+    ListNode *slow = head;
+    ListNode *fast = head;
+    while (fast && fast->next)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
+ListNode *reverse(ListNode *head)
+{
+    ListNode *prev = NULL;
+    ListNode *next = NULL;
+    while (head)
+    {
+        next = head->next;
+        head->next = prev;
+        prev = head;
+        head = next;
+    }
+    return prev;
+}
+void reorderList(ListNode *head)
+{
+    ListNode *mid = middle(head);
+    ListNode *rev = reverse(mid->next);
+    mid->next = NULL;
+    while (head && rev)
+    {
+        ListNode *p = head->next;
+        ListNode *q = rev->next;
+        head->next = rev;
+        head->next->next = p;
+        head = p;
+        rev = q;
     }
 }
