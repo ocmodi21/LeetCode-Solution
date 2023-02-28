@@ -13,36 +13,32 @@ struct TreeNode
 
 TreeNode *insertIntoBST(TreeNode *root, int val)
 {
-    TreeNode *p, *r;
-    TreeNode *t = root;
-    if (root == NULL)
-    {
-        p = new TreeNode(val);
-        root = p;
-        return root;
-    }
+    if (!root)
+        return new TreeNode(val);
 
-    while (t != NULL)
+    TreeNode *curr = root;
+    while (true)
     {
-        r = t;
-        if (val < t->val)
+        if (curr->val <= val)
         {
-            t = t->left;
-        }
-        else if (val > t->val)
-        {
-            t = t->right;
+            if (curr->right)
+                curr = curr->right;
+            else
+            {
+                curr->right = new TreeNode(val);
+                break;
+            }
         }
         else
         {
-            break;
+            if (curr->left)
+                curr = curr->left;
+            else
+            {
+                curr->left = new TreeNode(val);
+                break;
+            }
         }
     }
-
-    p = new TreeNode(val);
-    if (val < r->val)
-        r->left = p;
-    else
-        r->right = p;
     return root;
 }
