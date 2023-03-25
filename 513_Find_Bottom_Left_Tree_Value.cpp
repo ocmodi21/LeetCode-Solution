@@ -14,27 +14,26 @@ struct TreeNode
 // Approch-1-BFS
 int findBottomLeftValue(TreeNode *root)
 {
-    int bottomLeftVal = 0;
+    int bottomLeftValue;
+    if (!root)
+        return NULL;
     queue<TreeNode *> q;
     q.push(root);
     while (!q.empty())
     {
         int size = q.size();
-        int count = 0;
-        for (int i = 0; i < size; i++)
+        bottomLeftValue = q.front()->val;
+        while (size--)
         {
-            TreeNode *temp = q.front();
+            TreeNode *current = q.front();
             q.pop();
-            if (count == 0)
-                bottomLeftVal = temp->val;
-            if (temp->left)
-                q.push(temp->left);
-            if (temp->right)
-                q.push(temp->right);
-            count++;
+            if (current->left)
+                q.push(current->left);
+            if (current->right)
+                q.push(current->right);
         }
     }
-    return bottomLeftVal;
+    return bottomLeftValue;
 }
 
 // Approch-2-DFS
