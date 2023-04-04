@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Approch-1
 int numRescueBoats(vector<int> &people, int limit)
 {
     sort(people.begin(), people.end());
