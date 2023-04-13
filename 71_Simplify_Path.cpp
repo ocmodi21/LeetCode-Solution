@@ -4,7 +4,6 @@ using namespace std;
 string simplifyPath(string path)
 {
     stack<string> st;
-
     for (int i = 0; i < path.size(); ++i)
     {
         if (path[i] == '/')
