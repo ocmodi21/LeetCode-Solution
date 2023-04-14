@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Approch-1 =>Time Complexity o(n^2)
+// Approch-1  =>Time Complexity o(n^2)
 vector<int> twoSum1(vector<int> &nums, int target)
 {
     vector<int> v;
