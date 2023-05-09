@@ -17,4 +17,3 @@ int diagonalSum(vector<vector<int>> &mat)
     }
     return primarySum + secondarySum;
 }
-
