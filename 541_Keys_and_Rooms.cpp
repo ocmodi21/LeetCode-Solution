@@ -32,6 +32,4 @@ bool canVisitAllRooms(vector<vector<int>> &rooms)
         }
     }
     return true;
-}
-}
-;
+};
