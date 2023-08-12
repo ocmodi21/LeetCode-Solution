@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//Approch-1
+// Approch-1
 bool search(vector<int> &nums, int target)
 {
     int n = nums.size();
@@ -28,7 +28,7 @@ bool search(vector<int> &nums, int target)
     return 0;
 }
 
-//Approch-2
+// Approch-2
 bool search(vector<int> &nums, int target)
 {
     sort(nums.begin(), nums.end());
@@ -44,6 +44,39 @@ bool search(vector<int> &nums, int target)
             s = m + 1;
         else
             e = m - 1;
+    }
+    return false;
+}
+
+// Approch-3
+bool search(vector<int> &nums, int target)
+{
+    int start = 0, end = nums.size() - 1, mid;
+    while (start <= end)
+    {
+        mid = (end + start) / 2;
+
+        if (nums[mid] == target)
+            return true;
+        else if (nums[mid] == nums[start] && nums[mid] == nums[end])
+        {
+            start++;
+            end--;
+        }
+        else if (nums[start] <= nums[mid])
+        {
+            if (nums[start] <= target && nums[mid] >= target)
+                end = mid - 1;
+            else
+                start = mid + 1;
+        }
+        else
+        {
+            if (nums[mid] <= target && nums[end] >= target)
+                start = mid + 1;
+            else
+                end = mid - 1;
+        }
     }
     return false;
 }
